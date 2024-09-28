@@ -12,7 +12,7 @@ export const PostActions = () => {
             return;
         }
         try {
-            const response = await axios.post('https://59ffa7b8f91940b1.mokky.dev/posts', 
+            const response = await axios.post(`API_KEY/posts`, 
             { title: postTitle, description: postDescription });
             setPosts([...posts, response.data]); 
             toast.success('Пост успешно создан!');
@@ -25,7 +25,7 @@ export const PostActions = () => {
     // Функция удаления поста
     const removePost = async (id: number) => {
         try {
-            await axios.delete(`https://59ffa7b8f91940b1.mokky.dev/posts/${id}`);
+            await axios.delete(`API_KEY/posts/${id}`);
             setPosts(posts.filter(post => post.id !== id)); // Удаляем пост с указанным id
             toast.success('Пост успешно удалён!');
         } catch (error) {
