@@ -13,7 +13,7 @@ export const useFetchPosts = () => {
         const fetchData = async () => {
             setIsLoading(true);
             try {
-                const response = await axios.get<Post[]>(`https://59ffa7b8f91940b1.mokky.dev/posts`);
+                const response = await axios.get<Post[]>(`API_KEY/posts`);
                 setPosts(response.data);
                 
             } catch (error) {
