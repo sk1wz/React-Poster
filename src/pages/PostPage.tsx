@@ -10,7 +10,7 @@ const PostPage = () => {
     const fetchPost = async(id: string | undefined) =>{
        
         try {
-            const response = await axios.get(`https://59ffa7b8f91940b1.mokky.dev/posts/${id}`);
+            const response = await axios.get(`API_KEY/posts/${id}`);
             console.log(response.data)
             setPost(response.data);
         } catch (error) {
