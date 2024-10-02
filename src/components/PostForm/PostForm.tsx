@@ -4,9 +4,9 @@ import Button from '../ui/Button/Button';
 
 interface Props{
     postTitle: string;
-    setPostTitle: (value: string) => void;
+    setPostTitle: (value: any) => void;
     postDescription: string;
-    setPostDescription: (value: string) => void;
+    setPostDescription: (value: any) => void;
     addPost: () => void;
     setOpen: (value: boolean) => void;
   

@@ -3,6 +3,7 @@ import PostItem from '../PostItem/PostItem';
 import Select from '../ui/Select/Select';
 import Input from '../ui/Input/Input';
 import { useSearchStore } from '../../store/useSearchStore';
+import Search from '../Search/Search';
 
 
 interface Post{
@@ -22,6 +23,7 @@ interface Props{
 
 const PostList = (props: Props) => {
     const { value, setValue } = useSearchStore();
+
     return (
         <div className='post__list'>
 
@@ -29,7 +31,8 @@ const PostList = (props: Props) => {
                 <h1>Список постов</h1>
     
                 <div className="post__list__info__right">
-                    <Input placeholder='Введите для поиска' value={value} setValue={setValue}/>
+                    {/* <Input placeholder='Введите для поиска' value={value} setValue={setValue}/> */}
+                    <Search />
                     <button onClick={() => props.setOpen(true)}>Добавить пост</button>
                     <Select defaultValue='Сортировка' options={[
                     {value: 'title', name: 'Сортировка по названию'},
